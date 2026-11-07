@@ -1,0 +1,24 @@
+[2026-11-07 15:40:11 UTC] xrun -Q -unbuffered '-timescale' '1ns/1ns' '-sysv' '-access' '+rw' design.sv testbench.sv  
+TOOL:	xrun	25.03-s001: Started on Nov 07, 2026 at 10:40:11 EST
+xrun: 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+	Top level design units:
+		tb_door_lock
+Loading snapshot worklib.tb_door_lock:sv .................... Done
+xcelium> source /xcelium25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+Time=0 Password=0000 Door Unlock=0
+Time=10 Password=0101 Door Unlock=0
+Time=20 Password=1010 Door Unlock=0
+Time=25 Password=1010 Door Unlock=1
+Time=30 Password=1100 Door Unlock=1
+Time=35 Password=1100 Door Unlock=0
+Time=40 Password=1010 Door Unlock=0
+Time=45 Password=1010 Door Unlock=1
+Simulation complete via $finish(1) at time 50 NS + 0
+./testbench.sv:48     $finish;
+xcelium> exit
+TOOL:	xrun	25.03-s001: Exiting on Nov 07, 2026 at 10:40:13 EST  (total: 00:00:02)
+Finding VCD file...
+./door_lock.vcd
+[2026-11-07 15:40:13 UTC] Opening EPWave...
+Done
