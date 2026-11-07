@@ -1,6 +1,6 @@
 # Digital Password-Based Door Lock (Verilog HDL)
 
-Verilog RTL design of a door lock that unlocks when a 4-bit password matches the stored one, with a self-checking testbench, simulation waveforms and a generic Yosys synthesis.
+Verilog RTL design of a door lock that unlocks when a 4-bit password matches the stored one, with a self-checking testbench and simulation waveforms.
 
 ## How it works
 
@@ -41,14 +41,6 @@ When the sweep reaches `1010`, `door_unlock` goes high on the next rising clock 
 
 *The waveform timeline is in ns.*
 
-## Synthesis
-
-Yosys produced the [generic netlist](synthesis/synth.v) and [circuit diagram](synthesis/yosys-schematic.png) from the same RTL. See the [Yosys log](synthesis/yosys.log).
-
-![Yosys circuit diagram](synthesis/yosys-schematic.png)
-
-The design maps to 3 generic cells: one equality comparator (`$eq`), one multiplexer (`$mux`) and one flip-flop with asynchronous reset (`$adff`). Yosys keeps the multiplexer at the generic stage even though it only passes the comparison result through. The tool menu labels Yosys as 0.37, while the log identifies 0.38+113. No physical timing, power or chip area was measured.
-
 ## Folder structure
 
 ```
@@ -56,7 +48,6 @@ door-lock-verilog/
 ├── images/        waveform and simulation output screenshots
 ├── rtl/           design source (door_lock.v)
 ├── sim/           Xcelium simulation log
-├── synthesis/     Yosys netlist, diagram and log
 ├── tb/            testbench (tb_door_lock.v)
 ├── .gitignore
 └── README.md
@@ -67,7 +58,6 @@ door-lock-verilog/
 - Language: Verilog HDL
 - Simulator: Cadence Xcelium 25.03 on EDA Playground
 - Waveform viewer: EPWave
-- Synthesis: Yosys on EDA Playground
 
 ## Limitations and future work
 
